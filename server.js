@@ -106,7 +106,7 @@ async function handleEvent_scool(event) {
   const userId = event.source.userId;
 
   if (event.type === 'follow') {
-    const forumUrl = `https://stellamaris-forum.herokuapp.com/forum_school?userId=${userId}`;
+    const forumUrl = `https://school_bot_public/forum_school?userId=${userId}`;
 
     return client_school.replyMessage(event.replyToken, {
       "type": "template",
@@ -124,7 +124,7 @@ async function handleEvent_scool(event) {
       }
     });
   } else if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'レッスンログ登録をする。') {
-    const forumActiveUrl = `https://stellamaris-forum.herokuapp.com/forum_active?userId=${userId}`;
+    const forumActiveUrl = `https://school_bot_public/forum_active?userId=${userId}`;
 
     return client_school.replyMessage(event.replyToken, {
       "type": "template",
@@ -142,7 +142,7 @@ async function handleEvent_scool(event) {
       }
     });
   } else if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'レッスンログを確認する。') {
-    const forumActiveUrl = `https://stellamaris1.herokuapp.com/users_activity?name=${userId}`;
+    const forumActiveUrl = `https://school_bot_public/users_activity?name=${userId}`;
 
     return client_school.replyMessage(event.replyToken, {
       "type": "template",
@@ -161,7 +161,7 @@ async function handleEvent_scool(event) {
     });
     //学習サイト用のコード
   } else if (event.type === 'message' && event.message.type === 'text' && event.message.text === '学習サイトを開く') {
-    const learningSiteUrl = `https://stellamaris1.herokuapp.com/check_user?name=${userId}`;
+    const learningSiteUrl = `https://school_bot_public/check_user?name=${userId}`;
 
     return client_school.replyMessage(event.replyToken, {
       "type": "template",
@@ -188,7 +188,7 @@ async function handleEvent(event) {
   const userId = event.source.userId;
 
   if (event.type === 'follow') {
-    const forumUrl = `https://stellamaris-forum.herokuapp.com/forum?userId=${userId}`;
+    const forumUrl = `https://school_bot_public/forum?userId=${userId}`;
 
     return client.replyMessage(event.replyToken, {
       "type": "template",
@@ -206,7 +206,7 @@ async function handleEvent(event) {
       }
     });
   } else if (event.type === 'message' && event.message.type === 'text' && event.message.text === 'フォームを開く') {
-    const forumActiveUrl = `https://stellamaris-forum.herokuapp.com/forum?userId=${userId}`;
+    const forumActiveUrl = `https://school_bot_public/forum?userId=${userId}`;
 
     return client.replyMessage(event.replyToken, {
       "type": "template",
@@ -507,12 +507,12 @@ app.post('/create_event', (req, res) => {
               {
                 type: 'uri',
                 label: '参加',
-                uri: `https://stellamaris1.herokuapp.com/users_event_add?event_id=${eventId}&user_id=${user.lineid}&participation=participate`,
+                uri: `https://school_bot_public/users_event_add?event_id=${eventId}&user_id=${user.lineid}&participation=participate`,
               },
               {
                 type: 'uri',
                 label: '不参加',
-                uri: `https://stellamaris1.herokuapp.com/users_event_add?event_id=${eventId}&user_id=${user.lineid}&participation=not_participate`,
+                uri: `https://school_bot_public/users_event_add?event_id=${eventId}&user_id=${user.lineid}&participation=not_participate`,
               },
             ],
           },
@@ -774,7 +774,7 @@ app.post('/update_users_activity', (req, res) => {
         } else {
           if (oldData.instructor_comment !== instructor_comment && userId) {
             try {
-              const forumActiveUrl = `https://stellamaris1.herokuapp.com/users_activity?name=${userId}`;
+              const forumActiveUrl = `https://school_bot_public/users_activity?name=${userId}`;
 
               const message = {
                 "type": "template",
