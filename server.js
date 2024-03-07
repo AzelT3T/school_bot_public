@@ -22,12 +22,12 @@ const { JSDOM } = require('jsdom');
 app.use(express.static('public'));
 app.use(flash());
 const config = {
-  channelAccessToken: 'SmoXsJsuFIwdAtrSEkDEUbsJKO3+WNf6/f8jLRmihN7mpbuYdd8FpNBVwHA6OKVRgGS0mJ1pUA6tsHyCGiRxr+razzjtsJ2wxElBG774Yg81XucjCSwNAPF7AvX3NwdbBazFP9dSHqGdvb5AROYTCwdB04t89/1O/w1cDnyilFU=',
-  channelSecret: 'be50e4a39dddfb1abf055a3abcf96f3d',
+  channelAccessToken: 'channelAccessToken',
+  channelSecret: 'channelSecret',
 };
 const config_scool = {
-  channelAccessToken: '2sOkGJaf9tYYEX7Fn092lnCj15bV4gt4c/1Dqw3WLUgNNl5Z39jHQxx8fKRo69/YODH07l5MLpC2z9R4T6/Fa7DvLj6UwHKn7/VVY+GYDNAoIJw2YtuwUQ9uhy2Q2YUQ175V49XfIU+da3MvfOeNSwdB04t89/1O/w1cDnyilFU=',
-  channelSecret: 'aaae52789784b1fb5e69e8c39a776ea4',
+  channelAccessToken: 'channelAccessToken',
+  channelSecret: 'channelSecret',
 };
 
 
@@ -70,17 +70,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }));
 
 const connection = mysql.createConnection({
-  host: 'us-cdbr-east-05.cleardb.net',
-  user: 'b4b9528da5b122',
-  password: '4a0bda44',
-  database: 'heroku_166bdf4911de0cd'
+  host: 'host',
+  user: 'user',
+  password: 'password',
+  database: 'database'
 });
 
 const connection_cesium = mysql.createConnection({
-  host: 'us-cdbr-east-05.cleardb.net',
-  user: 'b0ba9c8f6c1115',
-  password: '4ec0e3c1',
-  database: 'heroku_252d6a4d868dd52'
+  host: 'host',
+  user: 'user',
+  password: 'password',
+  database: 'database'
 });
 
 connection.connect((err) => {
