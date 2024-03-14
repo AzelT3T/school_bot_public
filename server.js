@@ -1503,7 +1503,7 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  if (req.body.username === 'sora' && req.body.password === '0000') {
+  if (req.body.username === 'userName' && req.body.password === 'Password') {
     req.session.authenticated = true;
     const redirectTo = req.session.redirectTo || '/management';
     delete req.session.redirectTo;
